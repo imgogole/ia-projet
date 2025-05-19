@@ -48,4 +48,21 @@ Vous pouvez directement lancer le jeu en faisant :
 ./launch.sh
 ```
 
+## Ronin's Revenge
+
+Ronin's Revenge est un jeu en 2D à la vue du dessus. Votre but est de passer les niveaux du dojo en ayant tué tous les ennemies du niveaux.
+
+### Contrôles
+
+> **⚠️ Attention :** Les touches du clavier mentionnées sont considérées "physiques". Pour un clavier AZERTY, la touche W est Z, A est Q etc...
+
+**Déplacement :** Utilisez **W**, **S** pour vous déplacer verticalement et **A**, **D** pour vous déplacer horizontalement.
+**Orientation :** Utilisez la souris pour fixer le regard du personnage vers le curseur. Vous pouvez également appuyer sur **L** pour activer/désactiver le verrouillage vers l'ennemi le plus proche du personnage.
+**Attaque :** Utilisez **Clique gauche** pour attaquer devant vous.
+
+### But
+
+Attaquez les ennemies pour leur faire perdre des points de vie et les tuer. Quand tous les ennemis d'un niveau sont morts, vous pouvez vous diriger vers la sortie (escaliers).
+
+![Screen1](Images/S1.png)
 
