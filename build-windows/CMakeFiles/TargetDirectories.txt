@@ -1,0 +1,3 @@
+/home/dalil/Documents/Cours/ProjetIA/build-windows/CMakeFiles/game.dir
+/home/dalil/Documents/Cours/ProjetIA/build-windows/CMakeFiles/edit_cache.dir
+/home/dalil/Documents/Cours/ProjetIA/build-windows/CMakeFiles/rebuild_cache.dir

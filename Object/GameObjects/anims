@@ -1,0 +1,98 @@
+if (!is_boss)
+        {
+            animationSystem = std::make_unique<AnimationSystem>(renderer, "ENEMY1/");
+            animationSystem->SetEntries({{"idle",
+                                          {"enemy1_idle.png"},
+                                          FRAME_DURATION},
+
+                                         {"walk",
+                                          {
+                                              "enemy1_idle.png",
+                                              "enemy1_idle_step_left_1.png",
+                                              "enemy1_idle_step_left_2.png",
+                                              "enemy1_idle_step_right_1.png",
+                                              "enemy1_idle_step_right_2.png",
+                                          },
+                                          FRAME_DURATION,
+                                          {0, 1, 2, 1, 0, 3, 4, 3}},
+
+                                         {"attack",
+                                          {"enemy1_attack_0.png",
+                                           "enemy1_attack_1.png",
+                                           "enemy1_attack_2.png",
+                                           "enemy1_after_attack_0.png",
+                                           "enemy1_after_attack_1.png",
+                                           "enemy1_after_attack_2.png"},
+                                          ATTACK_FRAME_DURATION},
+
+                                         {"chase",
+                                          {
+                                              "enemy1_ready.png",
+                                              "enemy1_step_left_1.png",
+                                              "enemy1_step_left_2.png",
+                                              "enemy1_step_right_1.png",
+                                              "enemy1_step_right_2.png",
+                                          },
+                                          FRAME_DURATION * PLAYER_SPEED_SPRINT_MUL,
+                                          {0, 1, 2, 1, 0, 3, 4, 3}},
+
+                                         {"dead",
+                                          {
+                                              "enemy1_death1_1.png",
+                                              "enemy1_death1_2.png",
+                                              "enemy1_death1_3.png",
+                                              "enemy1_death1_4.png",
+                                              "enemy1_death1_5.png",
+                                              "enemy1_death1_6.png",
+                                          },
+                                          FRAME_DURATION}});
+        }
+        else
+        {
+            animationSystem = std::make_unique<AnimationSystem>(renderer, "BOSS/");
+            animationSystem->SetEntries({{"idle",
+                                          {"boss_idle.png"},
+                                          FRAME_DURATION},
+
+                                         {"walk",
+                                          {
+                                              "boss_idle.png",
+                                              "boss_step_left_1.png",
+                                              "boss_step_left_2.png",
+                                              "boss_step_right_1.png",
+                                              "boss_step_right_2.png",
+                                          },
+                                          FRAME_DURATION,
+                                          {0, 1, 2, 1, 0, 3, 4, 3}},
+
+                                         {"attack",
+                                          {"boss_attack_0.png",
+                                           "boss_attack_1.png",
+                                           "boss_attack_2.png",
+                                           "boss_after_attack_0.png",
+                                           "boss_after_attack_1.png",
+                                           "boss_after_attack_2.png"},
+                                          ATTACK_FRAME_DURATION},
+
+                                         {"chase",
+                                          {
+                                              "boss_idle.png",
+                                              "boss_step_left_1.png",
+                                              "boss_step_left_2.png",
+                                              "boss_step_right_1.png",
+                                              "boss_step_right_2.png",
+                                          },
+                                          FRAME_DURATION * PLAYER_SPEED_SPRINT_MUL,
+                                          {0, 1, 2, 1, 0, 3, 4, 3}},
+
+                                         {"dead",
+                                          {
+                                              "boss_death1_1.png",
+                                              "boss_death1_2.png",
+                                              "boss_death1_3.png",
+                                              "boss_death1_4.png",
+                                              "boss_death1_5.png",
+                                              "boss_death1_6.png",
+                                          },
+                                          FRAME_DURATION}});
+        }
