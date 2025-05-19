@@ -273,7 +273,6 @@ int main()
             if (e.type == SDL_QUIT)
                 gameRunning = false;
 
-            Debug::Log(std::to_string(e.type));
         }
 
         Input::UpdateKeys(window);
