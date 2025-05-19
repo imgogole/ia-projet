@@ -28,6 +28,8 @@
 #include <wall.h>
 #include <exit.h>
 
+#include <gameover.h>
+
 #include <scene.h>
 #include <camera.h>
 
@@ -112,6 +114,8 @@ int main()
         return -1;
     }
 
+    Mix_AllocateChannels(32);
+
     Time::Init();
     Random::SetSeed(time(nullptr));
 
@@ -124,6 +128,7 @@ int main()
     SoundManager::Instance().RegisterSound("dojo_ost", "dojo_ost.mp3");
     SoundManager::Instance().RegisterSound("hey", "Hey.mp3");
     SoundManager::Instance().RegisterSound("main_menu", "Menu.mp3");
+    SoundManager::Instance().RegisterSound("boss_kill", "boss_kill.mp3");
 
     SoundManager::Instance().PlaySound("main_menu", true, 0.5f);
 
@@ -132,6 +137,10 @@ int main()
 
     auto cam = std::make_shared<Camera>();
     scene.SetCamera(cam);
+
+    auto game_over = scene.CreateObject<GameOver>();
+    game_over->Init(renderer);
+    scene.SetGameOverObject(game_over);
 
     // player
 
@@ -263,6 +272,8 @@ int main()
         {
             if (e.type == SDL_QUIT)
                 gameRunning = false;
+
+            Debug::Log(std::to_string(e.type));
         }
 
         Input::UpdateKeys(window);

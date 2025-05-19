@@ -469,6 +469,7 @@ CMakeFiles/game.dir/main.cpp.o: \
  /home/dalil/Documents/Cours/Projet\ IA/Object/GameObjects/slidevalue.h \
  /home/dalil/Documents/Cours/Projet\ IA/Object/GameObjects/wall.h \
  /home/dalil/Documents/Cours/Projet\ IA/Object/GameObjects/exit.h \
+ /home/dalil/Documents/Cours/Projet\ IA/Object/GameObjects/gameover.h \
  /home/dalil/Documents/Cours/Projet\ IA/Object/scene.h \
  /home/dalil/Documents/Cours/Projet\ IA/Object/GameObjects/camera.h \
  /home/dalil/Documents/Cours/Projet\ IA/Object/GameObjects/gamelevel.h \

@@ -58,6 +58,7 @@ set(SOURCES
     ${CMAKE_SOURCE_DIR}/Object/GameObjects/end_video.h
     ${CMAKE_SOURCE_DIR}/Object/GameObjects/triggerenemy.h
     ${CMAKE_SOURCE_DIR}/Object/GameObjects/mainmenu.h
+    ${CMAKE_SOURCE_DIR}/Object/GameObjects/gameover.h
 )
 
 add_executable(game ${SOURCES})

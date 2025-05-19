@@ -94,6 +94,11 @@ public:
         attack_speed_slide->SetActive(false);
     }
 
+    void OnDeath() override
+    {
+        Scene::Instance().SetGameOver(true);
+    }
+
     void OnLevelChanged() override
     {
         InitEnemies(Scene::Instance().GetCurrentLevel()->GetEnemies());
@@ -264,7 +269,6 @@ public:
                 if (raycast.size() > 0)
                 {
 
-
                     if (Entity *enemy = dynamic_cast<Entity *>(raycast[0]))
                     {
                         if (!enemy->IsDead())
@@ -275,9 +279,17 @@ public:
                     }
                 }
 
-                if (!did_death_animation && enemies.size() != 0 && AllEnemiesDead() && Scene::Instance().GetCurrentLevelIndex() != BOSS_LEVEL)
+                if (!did_death_animation && enemies.size() != 0 && AllEnemiesDead())
                 {
-                    cinematic_system->StartVideo("end_kill");
+                    if (Scene::Instance().GetCurrentLevelIndex() != BOSS_LEVEL)
+                    {
+                        cinematic_system->StartVideo("end_kill");
+                    }
+                    else
+                    {
+                        cinematic_system->StartVideo("boss_kill");
+                    }
+
                     did_death_animation = true;
                 }
             }

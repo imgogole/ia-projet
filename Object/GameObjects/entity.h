@@ -50,8 +50,12 @@ public:
 
             SetLayerOrder(0);
             Scene::Instance().UpdateLayerOrder();
+
+            OnDeath();
         }
     }
+
+    virtual void OnDeath() { }
 
     bool IsDead() const 
     {

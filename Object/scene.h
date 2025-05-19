@@ -100,6 +100,19 @@ public:
         return level;
     }
 
+    void SetGameOver(bool go)
+    {
+        game_over->SetGameOver(go);
+    }
+
+    void SetGameOverObject(std::shared_ptr<GameOver> go)
+    {
+        game_over = go;
+        SetGameOver(false);
+    }
+
+
+
     void SetLevel(int index)
     {
         currentLevelIndex = index;
@@ -248,6 +261,7 @@ private:
     SceneObject player;
 
     std::vector<SceneObject> objects;
+    std::shared_ptr<GameOver> game_over;
     std::shared_ptr<Camera> camera;
     std::map<int, std::shared_ptr<GameLevel>> levels;
     int levelCount = 0, currentLevelIndex = 0;

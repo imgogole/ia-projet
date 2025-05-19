@@ -19,11 +19,13 @@ EndVideo()
     {
         video = std::make_unique<AnimationSystem>(renderer, "EndVideo/");
         
-        size_t frame_count_1 = 40, frame_count_2 = 16;
+        size_t frame_count_1 = 40, frame_count_2 = 16, frame_count_3 = 34;
         std::vector<std::string> paths1;
         std::vector<std::string> paths2;
+        std::vector<std::string> paths3;
         paths1.reserve(frame_count_1);
         paths2.reserve(frame_count_2);
+        paths3.reserve(frame_count_3);
         std::string number;
         for (int i = 0; i < frame_count_1; ++i)
         {
@@ -39,7 +41,14 @@ EndVideo()
             else number = std::string("0") + std::to_string(i);
             paths2.push_back("boss/zanka no tachi_" + number + ".png");
         }
-        video->SetEntries({  { "end_kill", paths1, 0.08f },   { "boss", paths2, 0.1f } });
+        for (int i = 0; i < frame_count_3; ++i)
+        {
+            if (i == 0) number = std::string("000");
+            else if (i < 10) number = std::string("00") + std::to_string(i);
+            else number = std::string("0") + std::to_string(i);
+            paths3.push_back("bosskill/boss_death_" + number + ".png");
+        }
+        video->SetEntries({  { "end_kill", paths1, 0.08f },   { "boss", paths2, 0.1f },   { "boss_kill", paths3, 0.1f } });
         video->SetAnimation("end_kill", false);
 
         timeBeforeExit = 0.0f;
@@ -47,11 +56,10 @@ EndVideo()
 
     void StartVideo(std::string id)
     {
-        bool isBoss = id == "boss";
         video->ResetAnimation();
         video->SetAnimation(id, false);
         SoundManager::Instance().PlaySound(id, false, 1.0f);
-        timeBeforeExit = isBoss ? 3.0f : 4.0f;
+        timeBeforeExit = video->EntryTime() + 0.35f;
     }
 
     void Update(float deltaTime) override

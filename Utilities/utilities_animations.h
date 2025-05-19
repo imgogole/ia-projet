@@ -16,6 +16,7 @@ struct AnimationEntry
     std::vector<int> pattern;
     size_t patternPos = 0;
     float timer = 0.0f;
+    float entryTime;
 
     AnimationEntry(SDL_Renderer *renderer,
                    std::string id_,
@@ -46,6 +47,8 @@ struct AnimationEntry
         {
             pattern = pattern_;
         }
+
+        entryTime = frameDuration * frames.size();
     }
 
     ~AnimationEntry()
@@ -61,6 +64,11 @@ struct AnimationEntry
     {
         patternPos = 0;
         timer = 0.0f;
+    }
+
+    float EntryTime() const
+    {
+        return entryTime;
     }
 
     SDL_Texture *Next(float deltaTime, bool loop)
@@ -204,6 +212,12 @@ public:
         if (!currentEntry_)
             return false;
         return currentEntry_->Finished();
+    }
+
+    float EntryTime() const
+    {
+        if (!currentEntry_) return 0.0f;
+        return currentEntry_->EntryTime();
     }
 
     // accès à l’ID ou à la texture courante si besoin
