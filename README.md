@@ -2,7 +2,7 @@
 
 >Projet réalisé par : Wassim HAMRIT, Ibrahim OZEL et Dalil NAAMNA dans le cadre de projet IA.
 
->**⚠️ Important :** une mise à jour récente de SDL2 sur la version 2.32.8 corrige le problème du crash de la fonction SDL_PollEvent. Lors de l'installation des dépendances, véfiriez que posséder bien la version 2.32.8 de SDL2 avant de compiler.
+>**⚠️ Important :** une mise à jour récente de SDL2 sur la version 2.32.8 corrige le problème du crash de la fonction SDL_PollEvent. Lors de l'installation des dépendances, vérifiez que posséder bien la version 2.32.8 de SDL2 avant de compiler.
 
 Ronin's Revenge est un jeu vidéo réalisé intégralement en C++. Vous êtes un des derniers samouraïs qui revient au dojo plusieurs années après avoir été rejeté du cercle disciplinaire des plus isolés et techniques des samouraïs pour prouver votre valeur.
 Ce jeu contient 4 niveaux, dont un niveau final où vous allez combattre le maître Shifu-mi.
